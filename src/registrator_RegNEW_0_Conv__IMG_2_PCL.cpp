@@ -71,8 +71,11 @@ void Registrator::BackProject_Depth_2_PCL( const cv::Mat                        
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+        //Generate a skin bin map to indicate where is the hand!
         cv::Mat                    skinnBIN = cv::Mat::zeros( Img_COL_RAWW_Curr.rows, Img_COL_RAWW_Curr.cols, CV_8UC1 );
-        if (kickOut_SkinColored)   skinnBIN = skinnDetector.compute_SkinnBinMap_4_Image( Img_COL_RAWW_Curr, Img_DDD_RAWW_Curr, PARAM_SkinnDetector_THRESH, true, false, false );
+        //Set the last parameter to be true to show the skin map!
+        if (kickOut_SkinColored)   skinnBIN = skinnDetector.compute_SkinnBinMap_4_Image( Img_COL_RAWW_Curr, Img_DDD_RAWW_Curr, PARAM_SkinnDetector_THRESH, true, false, true );
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -83,6 +86,7 @@ void Registrator::BackProject_Depth_2_PCL( const cv::Mat                        
             {
                 double  currDepth =      DEPTH.at<float>(iii,jjj);
                 int     msk       = (int)MASK. at<uchar>(iii,jjj);
+                //This is Skin!
                 bool    isSkin    = (skinnBIN. at<uchar>(iii,jjj)==255);
 
 

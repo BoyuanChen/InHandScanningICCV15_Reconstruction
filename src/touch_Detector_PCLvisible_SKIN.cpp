@@ -115,12 +115,15 @@ int Touch::detector_SkinTouch( int animNumb, pcl::search::KdTree<pcl::PointXYZRG
                                                 double unsignedDIST = getDistance_SKIN_to_PCL_from_sensor( tree, (*(pModel->PCL))[vvv] );
                                                 /////////////////////////////////////////////////////////////////////////////////////////
                                                 /////////////////////////////////////////////////////////////////////////////////////////
-
-
+//                                                std::cout << "INITIAL!!!!!!!!!!!!!!" << std::endl;
+//                                                std::cout << "unsignedDIST is HERE: " << PARAM_SKIN_Dist_THRESH_CURR <<std::endl;
+//                                                std::cout << "unsignedDIST is HERE: " << unsignedDIST <<std::endl;
 
 
                                                 if ( unsignedDIST <= PARAM_SKIN_Dist_THRESH_CURR )
                                                 {
+//                                                       std::cout << "unsignedDIST is HERE: " << PARAM_SKIN_Dist_THRESH_CURR <<std::endl;
+//                                                       std::cout << "unsignedDIST is HERE: " << unsignedDIST <<std::endl;
 
                                                         TouchingVertex TMP_touchingVertex;
                                                                        TMP_touchingVertex.vertex_XYZRGBNormal.x = (float)pModel->mesh.verticesWeighted[vvv](0);
@@ -194,6 +197,8 @@ int Touch::detector_SkinTouch( int animNumb, pcl::search::KdTree<pcl::PointXYZRG
 
 
                     ///////////////////////////
+//                    std::cout << "NOTE!!!!!!!!!!!!!!!!!!!!!!!!!!!!"<<std::endl;
+//                    std::cout << totalTouchingFINGs << std::endl;
                     return totalTouchingFINGs;
                     ///////////////////////////
 

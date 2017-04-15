@@ -128,7 +128,7 @@ void Registrator::myReg_1_LocalAlign(    bool    TEST_MODE,
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
+    //set up 3D Viewer environment
     boost::shared_ptr<pcl::visualization::PCLVisualizer> viewer (new pcl::visualization::PCLVisualizer("3D Viewer"));
                                                          viewer->setBackgroundColor( PARAM_BackGround_RRR, PARAM_BackGround_GGG, PARAM_BackGround_BBB );
                  if (PARAM_DBG_addCoordinateSystem)      viewer->addCoordinateSystem(PARAM_DBG_addCoordinateSysSIZ);
@@ -412,8 +412,8 @@ void Registrator::myReg_1_LocalAlign(    bool    TEST_MODE,
                                                                                     tree_PCL_Target.setInputCloud( target_cloud_UNorg_PN );
 
 
-                                        totalTouchFing_Source = touch->detector_SkinTouch( 0, tree_PCL_Source, touch->PARAM_should_ONLY_EF, false );    //std::cout << "SKIN     - totalTouchFing_Source - " << totalTouchFing_Source << "\t\t" << touch->PARAM_SKIN_Dist_THRESH_CURR << "\t\t" << touch->skinTouch_printTouchingFingers().toStdString() << std::endl;
-                                        totalTouchFing_Target = touch->detector_SkinTouch( 1, tree_PCL_Target, touch->PARAM_should_ONLY_EF, false );    //std::cout << "SKIN     - totalTouchFing_Target - " << totalTouchFing_Target << "\t\t" << touch->PARAM_SKIN_Dist_THRESH_CURR << "\t\t" << touch->skinTouch_printTouchingFingers().toStdString() << std::endl;
+                                        totalTouchFing_Source = touch->detector_SkinTouch( 0, tree_PCL_Source, touch->PARAM_should_ONLY_EF, true );    //std::cout << "SKIN     - totalTouchFing_Source - " << totalTouchFing_Source << "\t\t" << touch->PARAM_SKIN_Dist_THRESH_CURR << "\t\t" << touch->skinTouch_printTouchingFingers().toStdString() << std::endl;
+                                        totalTouchFing_Target = touch->detector_SkinTouch( 1, tree_PCL_Target, touch->PARAM_should_ONLY_EF, true );    //std::cout << "SKIN     - totalTouchFing_Target - " << totalTouchFing_Target << "\t\t" << touch->PARAM_SKIN_Dist_THRESH_CURR << "\t\t" << touch->skinTouch_printTouchingFingers().toStdString() << std::endl;
 
                                 }
 

@@ -133,6 +133,7 @@ void Registrator::restore_NANs___dueToPCLbugInBILATERAL( pcl::PointCloud<TYPE_Po
 }
 
 
+//functions to load camera parameters from Camera.txt from Directory_where_MODELS_MOTION_CAMERA_zips_are_unzipped = "/home/bo/ros/fetch_hand_dataset/Models_Motion_Camera"
 void Registrator::myLoadCameraParams( boost::shared_ptr<pcl::visualization::PCLVisualizer>& viewer )
 {
 

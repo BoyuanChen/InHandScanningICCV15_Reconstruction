@@ -1,0 +1,11 @@
+/usr/local/lib/libcpu_tsdf.so
+/usr/local/bin/tsdf2mesh
+/usr/local/bin/integrate
+/usr/local/bin/get_intrinsics
+/usr/local/include/cpu_tsdf/impl/tsdf_volume_octree.hpp
+/usr/local/include/cpu_tsdf/marching_cubes_tsdf_octree.h
+/usr/local/include/cpu_tsdf/octree.h
+/usr/local/include/cpu_tsdf/tsdf_interface.h
+/usr/local/include/cpu_tsdf/tsdf_volume_octree.h
+/usr/local/include/eigen_extensions/eigen_extensions.h
+/usr/local/share/cpu_tsdf/CPUTSDFConfig.cmake
